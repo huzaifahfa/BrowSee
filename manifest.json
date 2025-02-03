@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Facebook Marketplace Describer",
+    "version": "1.0",
+    "description": "Chrome extension that describes Facebook Marketplace listings for visually impaired users.",
+    "permissions": ["activeTab", "storage", "scripting"],
+    "host_permissions": ["https://www.facebook.com/marketplace/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.facebook.com/marketplace/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "icon.png"
+    }
+  }
